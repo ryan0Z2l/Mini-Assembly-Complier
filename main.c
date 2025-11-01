@@ -3,10 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*
-For the language grammar, please refer to Grammar section on the github page:
-  https://github.com/lightbulb12294/CSI2P-II-Mini1#grammar
-*/
 
 #define MAX_LENGTH 200
 typedef enum {
@@ -321,10 +317,7 @@ void semantic_check(AST *now) {
     semantic_check(now->lhs);
     semantic_check(now->mid);
     semantic_check(now->rhs);
-	// Operand of INC/DEC must be an identifier or identifier with one or more parentheses.
-	// TODO: Implement the remaining semantic_check code.
-	// hint: Follow the instruction above and ASSIGN-part code to implement.
-	// hint: Semantic of each node needs to be checked recursively (from the current node to lhs/mid/rhs node).
+	
 }
 
 void codegen(AST *root, int *stack_pointer) {
@@ -421,6 +414,7 @@ void codegen(AST *root, int *stack_pointer) {
 
     return;
 }
+
 
 
 
